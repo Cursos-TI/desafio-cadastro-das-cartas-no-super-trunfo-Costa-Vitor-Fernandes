@@ -33,17 +33,21 @@ void Cadastro(struct Carta *carta, int i){
 }
 int main() {
     struct Carta carta1, carta2;
-    int i=1;
-    switch (i) {
-        case 1:
-        Cadastro(&carta1, i);
-        i++;
-        ;
-        case 2:
-        Cadastro(&carta2, i);
-        i++;
-        ;
-        default: ExibirCarta(carta1, carta2);
-    };
+    //pode switch aqui? acho que não
+    // int i=1;
+    // switch (i) {
+    //     case 1:
+    //     Cadastro(&carta1, i);
+    //     i++;
+    //     ;
+    //     case 2:
+    //     Cadastro(&carta2, i);
+    //     i++;
+    //     ;
+    //     default: ExibirCarta(carta1, carta2);
+    // };
+    Cadastro(&carta1, 1);
+    Cadastro(&carta2, 2);
+    ExibirCarta(carta1,carta2);
     return 0;
 }
