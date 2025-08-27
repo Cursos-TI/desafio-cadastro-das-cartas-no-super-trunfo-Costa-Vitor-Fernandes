@@ -1,20 +1,13 @@
 #include <stdio.h>
-
-// Ajuste a estrutura para armazenar a população como unsigned long int
-struct Carta {
+struct Carta{
     char nome_cidade[50], estado[4], codigo_carta[4];
     float pib, area, densidade_populacional, pib_per_capita, super_poder;
     unsigned long int populacao;
     int n_pontos_turisticos;
 };
-
-// Função para calcular o Super Poder
 void calcular_super_poder(struct Carta *carta) {
-    // Atenção na conversão de tipos ao somar
     carta->super_poder = (float)carta->populacao + carta->area + carta->pib + (float)carta->n_pontos_turisticos + carta->pib_per_capita + (1.0 / carta->densidade_populacional);
 }
-
-// Função para exibir os dados de uma carta
 void ExibirCarta(struct Carta carta) {
     printf("Nome: %s\n", carta.nome_cidade);
     printf("Estado: %s\n", carta.estado);
@@ -27,8 +20,6 @@ void ExibirCarta(struct Carta carta) {
     printf("PIB per Capita: %.2f\n", carta.pib_per_capita);
     printf("Super Poder: %.2f\n", carta.super_poder);
 }
-
-// Função para o cadastro e cálculo dos atributos
 void Cadastro(struct Carta *carta, int i) {
     printf("CADASTRO DE CARTA NUMERO %d\n", i);
     printf("Insira as informacoes da Carta:\n");
@@ -46,14 +37,10 @@ void Cadastro(struct Carta *carta, int i) {
     scanf("%lu", &carta->populacao);
     printf("Digite o numero de pontos turisticos: ");
     scanf("%d", &carta->n_pontos_turisticos);
-
-
     carta->densidade_populacional = (float)carta->populacao / carta->area;
-
     carta->pib_per_capita = carta->pib / (float)carta->populacao;
+    calcular_super_poder(carta);
 }
-
-
 void CompararCartas(struct Carta carta1, struct Carta carta2) {
     printf("\nComparacao de Cartas:\n");
     printf("Populacao: %s venceu (%d)\n", (carta1.populacao > carta2.populacao) ? "Carta 1" : "Carta 2", carta1.populacao > carta2.populacao);
