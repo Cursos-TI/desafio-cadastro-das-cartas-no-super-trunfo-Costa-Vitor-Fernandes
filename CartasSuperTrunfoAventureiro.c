@@ -31,7 +31,7 @@ void Cadastro(struct Carta *carta, int i){
     printf("Carta Inserida:\n");
     carta->densidade_populacional= carta->populacao/carta->area;
     carta->pib_per_capita = carta->pib/carta->populacao;
-    printf("NOME : %s,\n ESTADO: %s,\n CODIGO DA CARTA: %s,\n PIB: %f,\n AREA: %f,\n POPULAÇÃO: %d,\n PONTOS TURISTICOS: %d, DENSIDADE POPULACIONAL: %f,\n PIB per Capita: %f, \n   \n\n\n\n", carta->nome_cidade, carta->estado, carta->codigo_carta, carta->pib, carta->area, carta->populacao, carta->n_pontos_turisticos, carta->densidade_populacional,carta->pib_per_capita);
+    printf("NOME : %s,\n ESTADO: %s,\n CODIGO DA CARTA: %s,\n PIB: %f,\n AREA: %f,\n POPULAÇÃO: %d,\n PONTOS TURISTICOS: %d, \n DENSIDADE POPULACIONAL: %f,\n PIB per Capita: %f, \n   \n\n\n\n", carta->nome_cidade, carta->estado, carta->codigo_carta, carta->pib, carta->area, carta->populacao, carta->n_pontos_turisticos, carta->densidade_populacional,carta->pib_per_capita);
 }
 int main() {
     struct Carta carta1, carta2;
